@@ -10,6 +10,4 @@ describe("--- CALCULATE COORDINATES --- ",() =>  {
     it("Test F1.3 - Insert matrix dimensions",() => {
         expect( calculate_Coordinates("")).toEqual("Formato incorrecto"); 
     } );
-
-
 } )
