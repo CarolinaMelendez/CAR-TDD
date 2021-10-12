@@ -41,13 +41,29 @@ describe("--- FUNCIONALIDAD 2: Ingresar posición inicial  --- ",() =>  {
     it("Test F2.3 - Check format of posición inicial -> 3,1 F",() => {
         expect( calculate_Coordinates("5,5/3,1 F")).toEqual("Formato incorrecto"); 
     } );
-    it("Test F2.4 - Check format of posición inicial -> 3,1 F",() => {
+    it("Test F2.4 - Check format of posición inicial ",() => {
         expect( calculate_Coordinates("5,5/3.1,1 F")).toEqual("Formato incorrecto"); 
     } );
-    it("Test F2.5 - Check format of posición inicial -> 3,1 F",() => {
+    it("Test F2.5 - Check format of posición inicial ",() => {
         expect( calculate_Coordinates("5,5/2,-1 F")).toEqual("Formato incorrecto"); 
     } );
-    it("Test F2.5 - Check format of posición inicial -> 3,1 F",() => {
+    it("Test F2.6 - Check format of posición inicial ",() => {
         expect( calculate_Coordinates("5,5/2,1N")).toEqual("2,1N"); 
     } );
+} )
+
+describe("--- FUNCIONALIDAD 3: Ejecutar una vez el comando A (Avanzar)  --- ",() =>  {
+    it("Test F3.1 - give correct final position ",() => {
+        expect( calculate_Coordinates("5,5/3,1 N/A")).toEqual("3,2 N"); 
+    } );
+    it("Test F3.2 - give correct final position  ",() => {
+        expect( calculate_Coordinates("5,5/2,1 W/A")).toEqual("1,1 W"); 
+    } );
+    it("Test F3.3 - give correct final position  ",() => {
+        expect( calculate_Coordinates("5,5/3,3 S/A")).toEqual("3,2 S"); 
+    } );
+    it("Test F3.4 - give correct final position  ",() => {
+        expect( calculate_Coordinates("5,5/3,3 E/A")).toEqual("4,3 E"); 
+    } );
+  
 } )
