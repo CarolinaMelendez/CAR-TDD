@@ -1,8 +1,17 @@
 export function calculate_Coordinates(string_Comand){
-    if (isCorrectFormat_Dimensions(string_Comand)){
-        return "0,0 N"
+    let string_Comand_separated = string_Comand.split("/");
+    let comand_dimensions = string_Comand_separated[0];
+    let initial_position = string_Comand_separated[1];
+
+    let default_position = "0,0 N";
+    if (isCorrectFormat_Dimensions(comand_dimensions)){
+        if (initial_position){
+            return initial_position;
+        }else{
+            return default_position;
+        }
     }else{
-        return "Formato incorrecto"
+        return "Formato incorrecto";
     }
 }
 

@@ -3,7 +3,7 @@ function calculatecoordinates( stringComand )
       Funcionalidades
    ---------------------
 F1: Ingresar dimensiones de la matriz 
-    |-> 
+    |-> OK
 F2: Ingresar posición inicial 
     |-> 
 F3: Ejecutar una vez el comando "A" (Avanzar)
