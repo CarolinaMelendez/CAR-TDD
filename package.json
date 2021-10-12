@@ -2,9 +2,10 @@
   "name": "autitos-tdd",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest --coverage --watch",
     "test-once": "jest --coverage"
   },
