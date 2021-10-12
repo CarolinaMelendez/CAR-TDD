@@ -11,7 +11,7 @@ function calculatecoordinates( stringComand )
 
 ... Criterios de confirmación:
 . Cuando se ingrese el comando y pulse la opción de ejecutar
-se deberá mostrar posición inicial por defecto (0,0)
+se deberá mostrar posición inicial por defecto (0,0 N)
 . Se mostrara mensaje de error si la cadena ingresada esta vacio
 . Se mostrara mensaje de error si no tiene formato correcto
 . Formato correcto  5,1 ---> <nro>,<nro>

@@ -1,0 +1,17 @@
+TN:
+SF:src\Functions_car.js
+FN:1,calculate_Coordinates
+FNF:1
+FNH:1
+FNDA:3,calculate_Coordinates
+DA:2,3
+DA:3,3
+DA:4,1
+DA:6,2
+LF:4
+LH:4
+BRDA:3,0,0,1
+BRDA:3,0,1,2
+BRF:2
+BRH:2
+end_of_record
