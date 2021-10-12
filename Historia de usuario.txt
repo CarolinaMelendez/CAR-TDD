@@ -1,0 +1,114 @@
+function calculatecoordinates( stringComand )
+
+
+  HISTORIA DE USUARIO
+-----------------------------------------------------------
+|    Funcionalidad 1: Ingresar dimensiones de la matriz   |
+-----------------------------------------------------------
+- Como: usuario/controlador/conductor
+- Quiero: definir el tamaño de mi superficie
+- Para: mantener un limite de hasta donde puede ir mi autito
+
+... Criterios de confirmación:
+. Cuando se ingrese el comando y pulse la opción de ejecutar
+se deberá mostrar posición inicial por defecto (0,0)
+. Se mostrara mensaje de error si la cadena ingresada esta vacio
+. Se mostrara mensaje de error si no tiene formato correcto
+. Formato correcto  5,1 ---> <nro>,<nro>
+. Los número son separados por una coma
+. Lo números ingresados solo pueden ser número enteros positivos
+. Formato incorrecto  5-5  |  5  | -1,8  | 0.1,5.2
+. Mensaje de error "formato incorrecto"
+
+-----------------------------------------------------------
+|    Funcionalidad 2: Ingresar posición inicial           |
+-----------------------------------------------------------
+- Como: usuario/controlador/conductor
+- Quiero: definir punto inicial de partida del autito
+- Para: empezar a conducir desde un punto en especifico. y no 
+desde un punto inicial.
+
+... Criterios de confirmación:
+. La posición inicial debe ingresarse a lado de las dimesiones despues 
+de un "/" sin espacio en la cadena de comando. 
+. Cuando se ingrese el comando y pulse la opción de ejecutar
+se deberá mostrar posición inicial ingresada.
+. Se mostrara mensaje de error si no tiene formato correcto
+. Formato correcto  5,1 N ---> <nro>,<nro> <direción>
+. La direción debe estar separada con un espacio.
+. La direción solo puede tener los siguientes valores "N","S","W","E"
+. Lo números ingresados solo pueden ser número enteros positivos
+. Formato incorrecto  5.1S  |  5,2N  | 0.2  | 5,2
+. Mensaje de error "formato incorrecto"
+
+-----------------------------------------------------------
+|    Funcionalidad 3: Ejecutar una vez el comando "A" (Avanzar)           |
+-----------------------------------------------------------
+- Como: usuario/controlador/conductor
+- Quiero: que mi auto avance
+- Para: que mi auto se pueda mover hacia adelante segun su orientación
+
+... Criterios de confirmación:
+. El comando "A" debe ingresarse a lado de la posición inicial despues 
+de un "/" sin espacio en la cadena de comando. 
+. Cuando se ingrese el comando y pulse la opción de ejecutar
+se deberá mostrar posición final donde está ubicada el auto.
+. Se mostrara mensaje de error si se ingresa una letra diferente de "A"
+. Mensaje de error "formato incorrecto"
+
+-----------------------------------------------------------
+|    Funcionalidad 4: Ejecutar n veces el comando "A" (Avanzar)           |
+-----------------------------------------------------------
+- Como: usuario/controlador/conductor
+- Quiero: que mi auto avance una larga distancia
+- Para: que mi auto se pueda mover hacia adelante segun su orientación
+
+... Criterios de confirmación:
+. El comando para movimiento debe ingresarse a lado de la posición inicial despues 
+de un "/" sin espacio en la cadena de comando. 
+. Será posible ingresar varias el comando "A"
+. Cuando llegue a los límites de la dimensión de la superficie el auto
+no podrá avanzar por lo tanto se ignorará el resto de los comandos de "A"
+. Cuando se ingrese el comando y pulse la opción de ejecutar
+se deberá mostrar posición final donde está ubicada el auto.
+. Se mostrara mensaje de error si se ingresa una letra diferente de "A"
+. Mensaje de error "formato incorrecto"
+
+-----------------------------------------------------------
+|    Funcionalidad 5: Implementar comando "I" (Izquierda)           |
+-----------------------------------------------------------
+- Como: usuario/controlador/conductor
+- Quiero: que mi auto pueda cambiar de dirección por el lado izquierdo
+- Para: que mi auto pueda dar la vuelta o bien 
+redireccionarse por el lado izquiedo.
+
+... Criterios de confirmación:
+. El comando para movimiento debe ingresarse a lado de la posición inicial despues 
+de un "/" sin espacio en la cadena de comando. 
+. Será posible ingresar varias el comando "I"
+. Cuando se ingrese el comando y pulse la opción de ejecutar
+se deberá mostrar posición final donde está ubicada el auto.
+. La posición final estará con su respectiva orientación (N,S,W,E), de
+acuerdo  a la cantidad de veces que se ejecuto el comando "I"
+. Se mostrara mensaje de error si se ingresa una letra diferente de "A","I"
+. Mensaje de error "formato incorrecto"
+
+-----------------------------------------------------------
+|    Funcionalidad 6: Implementar comando "D" (Derecha)           |
+-----------------------------------------------------------
+- Como: usuario/controlador/conductor
+- Quiero: que mi auto pueda cambiar de dirección por el lado derecho
+- Para: que mi auto pueda dar la vuelta o bien 
+redireccionarse por el lado derecho.
+
+... Criterios de confirmación:
+. El comando para movimiento debe ingresarse a lado de la posición inicial despues 
+de un "/" sin espacio en la cadena de comando. 
+. Será posible ingresar varias el comando "D"
+. Cuando se ingrese el comando y pulse la opción de ejecutar
+se deberá mostrar posición final donde está ubicada el auto.
+. La posición final estará con su respectiva orientación (N,S,W,E), de
+acuerdo  a la cantidad de veces que se ejecuto el comando "D"
+. Se mostrara mensaje de error si se ingresa una letra diferente de "A","I","D"
+. Mensaje de error "formato incorrecto"
+
