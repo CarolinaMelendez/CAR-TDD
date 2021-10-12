@@ -35,8 +35,8 @@ de un "/" sin espacio en la cadena de comando.
 se deberá mostrar posición inicial ingresada.
 . Se mostrara mensaje de error si no tiene formato correcto
 . Formato correcto  5,1 N ---> <nro>,<nro> <direción>
-. La direción debe estar separada con un espacio.
-. La direción solo puede tener los siguientes valores "N","S","W","E"
+. La direción puede o no estar separada con un espacio.
+. La direción solo puede tener los siguientes letras en mayusculas "N","S","W","E"
 . Lo números ingresados solo pueden ser número enteros positivos
 . Formato incorrecto  5.1S  |  5,2N  | 0.2  | 5,2
 . Mensaje de error "formato incorrecto"

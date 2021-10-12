@@ -6,7 +6,12 @@ export function calculate_Coordinates(string_Comand){
     let default_position = "0,0 N";
     if (isCorrectFormat_Dimensions(comand_dimensions)){
         if (initial_position){
-            return initial_position;
+            if (isCorrectFormat_InitialPosition(initial_position)){
+                return initial_position;
+            }else{
+                return "Formato incorrecto";
+            }
+            
         }else{
             return default_position;
         }
@@ -22,6 +27,23 @@ function isCorrectFormat_Dimensions(string_Comand_dimensions){
     const isCorrectNumber = num => isPositive(num) && isWholeNumber(num);
 
     if (isCorrectNumber(dimensions[0]) && isCorrectNumber(dimensions[1]) ){
+        return true
+    }else{
+        return false
+    }
+}
+
+function isCorrectFormat_InitialPosition(string_Comand_initialPosition){
+    let orientation = string_Comand_initialPosition[string_Comand_initialPosition.length -1];
+    let coordinates = string_Comand_initialPosition.replace(orientation,"");
+    let coordinates_pair = coordinates.split(",").map(Number);
+    const isPositive = num => num > 0;
+    const isWholeNumber = num => num % 1 == 0;
+    const isCorrectNumber = num => isPositive(num) && isWholeNumber(num);
+
+    const isCorrectOrientation = orientation => orientation == "N" || orientation == "E" || orientation == "S" || orientation == "W";
+
+    if (isCorrectNumber(coordinates_pair[0]) && isCorrectNumber(coordinates_pair[1] && isCorrectOrientation(orientation)) ){
         return true
     }else{
         return false

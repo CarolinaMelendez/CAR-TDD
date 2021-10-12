@@ -35,4 +35,19 @@ describe("--- FUNCIONALIDAD 2: Ingresar posición inicial  --- ",() =>  {
     it("Test F2.1 - give initial position",() => {
         expect( calculate_Coordinates("5,5/3,1 N")).toEqual("3,1 N"); 
     } );
+    it("Test F2.2 - Check format of posición inicial -> 3-1 s",() => {
+        expect( calculate_Coordinates("5,5/3-1 s")).toEqual("Formato incorrecto"); 
+    } );
+    it("Test F2.3 - Check format of posición inicial -> 3,1 F",() => {
+        expect( calculate_Coordinates("5,5/3,1 F")).toEqual("Formato incorrecto"); 
+    } );
+    it("Test F2.4 - Check format of posición inicial -> 3,1 F",() => {
+        expect( calculate_Coordinates("5,5/3.1,1 F")).toEqual("Formato incorrecto"); 
+    } );
+    it("Test F2.5 - Check format of posición inicial -> 3,1 F",() => {
+        expect( calculate_Coordinates("5,5/2,-1 F")).toEqual("Formato incorrecto"); 
+    } );
+    it("Test F2.5 - Check format of posición inicial -> 3,1 F",() => {
+        expect( calculate_Coordinates("5,5/2,1N")).toEqual("2,1N"); 
+    } );
 } )
