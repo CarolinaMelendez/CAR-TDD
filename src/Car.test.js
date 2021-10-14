@@ -84,6 +84,9 @@ describe("--- FUNCIONALIDAD 4: Ejecutar n veces el comando 'A' (Avanzar)  --- ",
     it("Test F4.3 - check format with many letters ",() => {
         expect( calculate_Coordinates("5,5/3,1 W/AAAO")).toEqual("Formato incorrecto"); 
     } );
+    it("Test F4.3 - check limits of dimensions ",() => {
+        expect( calculate_Coordinates("5,5/3,1 S/AAA")).toEqual("3,0 S"); 
+    } );
  
   
 } )
