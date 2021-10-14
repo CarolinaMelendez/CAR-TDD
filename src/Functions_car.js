@@ -23,6 +23,8 @@ export function calculate_Coordinates(string_command){
         for (var move of move_command) {
             if(move == 'I'){
                 toTurnLeft_cmd_I_();
+            }else if (move == 'D' ){
+                toTurnLeft_cmd_D_();
             }else{
                 moveForward_cmd_A_(dimensions);
             }
@@ -48,6 +50,18 @@ function toTurnLeft_cmd_I_(){
         orientation = "N"; 
     }else{ // if (orientation == "S"){ 
         orientation = "E"; 
+    }
+}
+
+function toTurnLeft_cmd_D_(){
+    if (      orientation == "N"){ 
+        orientation = "E"; 
+    }else if (orientation == "W"){ 
+        orientation = "N"; 
+    }else if (orientation == "E"){ 
+        orientation = "S"; 
+    }else{ // if (orientation == "S"){ 
+        orientation = "W"; 
     }
 }
 
@@ -98,7 +112,7 @@ function isCorrectFormat_InitialPosition(string_Comand_initialPosition){
 }
 
 function isCorrectFormat_StringMovements(stringMovements){
-    var existThisMovement = move => move == 'A' || move == 'I';
+    var existThisMovement = move => move == 'A' || move == 'I' || move == 'D';
     var isFormatCorrect = true;
     for (var move_letter of stringMovements) {
         if(!existThisMovement(move_letter)){

@@ -107,3 +107,22 @@ describe("--- FUNCIONALIDAD 5: Implementar comando 'I' (Izquierda)   --- ",() =>
     } );
 
 } )
+
+describe("--- FUNCIONALIDAD 6: Implementar comando 'D' (Derecha)  --- ",() =>  {
+    it("Test F6.1 - give correct position with I ",() => {
+        expect( calculate_Coordinates("5,5/3,1 N/AAAD")).toEqual("3,4 E"); 
+    } );
+    it("Test F6.2 - give correct position with I ",() => {
+        expect( calculate_Coordinates("5,5/3,1 N/AAADD")).toEqual("3,4 S"); 
+    } );
+    it("Test F6.3 - give correct position with I ",() => {
+        expect( calculate_Coordinates("5,5/3,1 N/AAADDD")).toEqual("3,4 W"); 
+    } );
+    it("Test F6.4 - give correct position with I ",() => {
+        expect( calculate_Coordinates("5,5/3,1 N/AAADDDD")).toEqual("3,4 N"); 
+    } );
+    it("Test F6.5 - check format ",() => {
+        expect( calculate_Coordinates("5,5/3,1 N/AAAD51")).toEqual("Formato incorrecto"); 
+    } );
+
+} )
