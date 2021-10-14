@@ -21,7 +21,21 @@ export function calculate_Coordinates(string_command){
     if (answerCorrectionFormat == "Formato correcto"){
         setUp_initialPosition(initial_position);
         for (var move of move_command) {
-            moveForward_cmd_A_(dimensions);
+            if(move == 'I'){
+                if (orientation == "N"){ 
+                    orientation = "W"; 
+                }else if (orientation == "W"){ 
+                    orientation = "S"; 
+                }else if (orientation == "E"){ 
+                    orientation = "N"; 
+                }else if (orientation == "S"){ 
+                    orientation = "E"; 
+                }
+                
+            }else{
+                moveForward_cmd_A_(dimensions);
+            }
+
         }
         return final_position();
         
@@ -83,7 +97,7 @@ function isCorrectFormat_InitialPosition(string_Comand_initialPosition){
 }
 
 function isCorrectFormat_StringMovements(stringMovements){
-    var existThisMovement = move => move == 'A';
+    var existThisMovement = move => move == 'A' || move == 'I';
     var isFormatCorrect = true;
     for (var move_letter of stringMovements) {
         if(!existThisMovement(move_letter)){

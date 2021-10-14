@@ -87,6 +87,23 @@ describe("--- FUNCIONALIDAD 4: Ejecutar n veces el comando 'A' (Avanzar)  --- ",
     it("Test F4.3 - check limits of dimensions ",() => {
         expect( calculate_Coordinates("5,5/3,1 S/AAA")).toEqual("3,0 S"); 
     } );
- 
-  
+} )
+
+describe("--- FUNCIONALIDAD 5: Implementar comando 'I' (Izquierda)   --- ",() =>  {
+    it("Test F5.1 - give correct position with I ",() => {
+        expect( calculate_Coordinates("5,5/3,1 N/AAAI")).toEqual("3,4 W"); 
+    } );
+    it("Test F5.2 - give correct position with I ",() => {
+        expect( calculate_Coordinates("5,5/3,1 N/AAAII")).toEqual("3,4 S"); 
+    } );
+    it("Test F5.3 - give correct position with I ",() => {
+        expect( calculate_Coordinates("5,5/3,1 N/AAAIII")).toEqual("3,4 E"); 
+    } );
+    it("Test F5.4 - give correct position with I ",() => {
+        expect( calculate_Coordinates("5,5/3,1 N/AAAIIII")).toEqual("3,4 N"); 
+    } );
+    it("Test F5.5 - check format ",() => {
+        expect( calculate_Coordinates("5,5/3,1 N/AAAIIII1")).toEqual("Formato incorrecto"); 
+    } );
+
 } )
