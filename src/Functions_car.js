@@ -30,17 +30,17 @@ export function calculate_Coordinates(string_command){
     }
 }
 
-
 function final_position(){
     return [coordinate_X,",",coordinate_Y," ",orientation].join('');
 }
 
+
+
 function moveForward_cmd_A_(string_Comand_dimensions){
     let dimensions = string_Comand_dimensions.split(",").map(Number);
-    var isBetween_rangeX = num => num > 0 && num < dimensions[0];
-    var isBetween_rangeY = num => num > 0 && num < dimensions[1];
+    var isBetween_dimension = (num,dim) => num > 0 && num < dim ;
 
-    if (isBetween_rangeX(coordinate_X) && isBetween_rangeY(coordinate_Y)){
+    if (isBetween_dimension(coordinate_X,dimensions[0]) && isBetween_dimension(coordinate_Y,dimensions[1])){        
         if (orientation == "N"){
             coordinate_Y++;
         }
@@ -81,11 +81,7 @@ function isCorrectFormat_InitialPosition(string_Comand_initialPosition){
     }
     return false;
 }
-/*
-function isCorrectFormat_StringMovements(stringMovements){
-    var existThisMovement = move => move == 'A';
-    return existThisMovement(stringMovements);
-}*/
+
 function isCorrectFormat_StringMovements(stringMovements){
     var existThisMovement = move => move == 'A';
     var isFormatCorrect = true;

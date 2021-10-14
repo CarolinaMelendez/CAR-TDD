@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1634190397642" clover="3.2.0">
-  <project timestamp="1634190397642" name="All files">
-    <metrics statements="62" coveredstatements="62" conditionals="44" coveredconditionals="44" methods="16" coveredmethods="16" elements="122" coveredelements="122" complexity="0" loc="62" ncloc="62" packages="1" files="1" classes="1"/>
+<coverage generated="1634192300431" clover="3.2.0">
+  <project timestamp="1634192300431" name="All files">
+    <metrics statements="61" coveredstatements="61" conditionals="42" coveredconditionals="42" methods="15" coveredmethods="15" elements="118" coveredelements="118" complexity="0" loc="61" ncloc="61" packages="1" files="1" classes="1"/>
     <file name="Functions_car.js" path="D:\CARITO ---Trabajos\4 Ingenieria de Software\Tareas\base-js-Autitos\Autitos-TDD\src\Functions_car.js">
-      <metrics statements="62" coveredstatements="62" conditionals="44" coveredconditionals="44" methods="16" coveredmethods="16"/>
+      <metrics statements="61" coveredstatements="61" conditionals="42" coveredconditionals="42" methods="15" coveredmethods="15"/>
       <line num="3" count="73" type="stmt"/>
       <line num="4" count="65" type="stmt"/>
       <line num="5" count="73" type="cond" truecount="2" falsecount="0"/>
@@ -22,10 +22,9 @@
       <line num="24" count="14" type="stmt"/>
       <line num="26" count="8" type="stmt"/>
       <line num="29" count="17" type="stmt"/>
-      <line num="35" count="9" type="stmt"/>
-      <line num="39" count="14" type="stmt"/>
-      <line num="40" count="14" type="cond" truecount="2" falsecount="0"/>
-      <line num="41" count="14" type="cond" truecount="2" falsecount="0"/>
+      <line num="34" count="9" type="stmt"/>
+      <line num="40" count="14" type="stmt"/>
+      <line num="41" count="28" type="cond" truecount="2" falsecount="0"/>
       <line num="43" count="14" type="cond" truecount="4" falsecount="0"/>
       <line num="44" count="12" type="cond" truecount="2" falsecount="0"/>
       <line num="45" count="4" type="stmt"/>
@@ -49,23 +48,23 @@
       <line num="79" count="16" type="cond" truecount="4" falsecount="0"/>
       <line num="80" count="10" type="stmt"/>
       <line num="82" count="6" type="stmt"/>
-      <line num="90" count="18" type="stmt"/>
-      <line num="91" count="9" type="stmt"/>
-      <line num="92" count="9" type="stmt"/>
-      <line num="93" count="18" type="cond" truecount="2" falsecount="0"/>
-      <line num="94" count="1" type="stmt"/>
-      <line num="97" count="9" type="stmt"/>
-      <line num="101" count="25" type="cond" truecount="2" falsecount="0"/>
-      <line num="102" count="17" type="cond" truecount="2" falsecount="0"/>
-      <line num="103" count="16" type="cond" truecount="2" falsecount="0"/>
-      <line num="104" count="10" type="cond" truecount="2" falsecount="0"/>
-      <line num="105" count="9" type="cond" truecount="2" falsecount="0"/>
-      <line num="106" count="8" type="stmt"/>
-      <line num="108" count="1" type="stmt"/>
+      <line num="86" count="18" type="stmt"/>
+      <line num="87" count="9" type="stmt"/>
+      <line num="88" count="9" type="stmt"/>
+      <line num="89" count="18" type="cond" truecount="2" falsecount="0"/>
+      <line num="90" count="1" type="stmt"/>
+      <line num="93" count="9" type="stmt"/>
+      <line num="97" count="25" type="cond" truecount="2" falsecount="0"/>
+      <line num="98" count="17" type="cond" truecount="2" falsecount="0"/>
+      <line num="99" count="16" type="cond" truecount="2" falsecount="0"/>
+      <line num="100" count="10" type="cond" truecount="2" falsecount="0"/>
+      <line num="101" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="102" count="8" type="stmt"/>
+      <line num="104" count="1" type="stmt"/>
+      <line num="106" count="1" type="stmt"/>
+      <line num="108" count="6" type="stmt"/>
       <line num="110" count="1" type="stmt"/>
-      <line num="112" count="6" type="stmt"/>
-      <line num="114" count="1" type="stmt"/>
-      <line num="116" count="8" type="stmt"/>
+      <line num="112" count="8" type="stmt"/>
     </file>
   </project>
 </coverage>
