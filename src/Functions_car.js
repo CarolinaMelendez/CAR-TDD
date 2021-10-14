@@ -1,6 +1,6 @@
 //import { parseSync } from "@babel/core";
 
-const isPositive = num => num > 0;
+const isPositive = num => num >= 0;
 const isWholeNumber = num => num % 1 == 0;
 const isCorrectNumber = num => isPositive(num) && isWholeNumber(num);
 const isCorrectNumbersPair = vector => isCorrectNumber(vector[0]) &&  isCorrectNumber(vector[1]);
@@ -23,14 +23,13 @@ export function calculate_Coordinates(string_command){
         for (var move of move_command) {
             if(move == 'I'){
                 toTurnLeft_cmd_I_();
-            }else if (move == 'D' ){
-                toTurnLeft_cmd_D_();
+            }else if (move == 'D'){
+                toTurnRight_cmd_D_();
             }else{
                 moveForward_cmd_A_(dimensions);
             }
         }
         return final_position();
-        
     }else{
         return answerCorrectionFormat;
     }
@@ -53,7 +52,7 @@ function toTurnLeft_cmd_I_(){
     }
 }
 
-function toTurnLeft_cmd_D_(){
+function toTurnRight_cmd_D_(){
     if (      orientation == "N"){ 
         orientation = "E"; 
     }else if (orientation == "W"){ 
@@ -67,22 +66,29 @@ function toTurnLeft_cmd_D_(){
 
 function moveForward_cmd_A_(string_Comand_dimensions){
     let dimensions = string_Comand_dimensions.split(",").map(Number);
-    var isBetween_dimension = (num,dim) => num > 0 && num < dim ;
-
-    if (isBetween_dimension(coordinate_X,dimensions[0]) && isBetween_dimension(coordinate_Y,dimensions[1])){        
-        if (orientation == "N"){
+    var isBetween_dimension = (num,dim) => num >= 0 && num <= dim;     
+        if (      orientation == "N"){
             coordinate_Y++;
-        }
-        if (orientation == "S"){
+            if (!isBetween_dimension(coordinate_Y,dimensions[1])){
+                coordinate_Y--;
+            }
+        }else if (orientation == "S"){
             coordinate_Y--;
-        }
-        if (orientation == "W"){
+            if (!isBetween_dimension(coordinate_Y,dimensions[1])){
+                coordinate_Y++;
+            }
+        }else if (orientation == "W"){
             coordinate_X--;
-        }
-        if (orientation == "E"){
+            if (!isBetween_dimension(coordinate_X,dimensions[0])){
+                coordinate_X++;
+            }
+        }else{ //  if (orientation == "E"){
             coordinate_X++;
+            if (!isBetween_dimension(coordinate_X,dimensions[0])){
+                coordinate_X--;
+            }
         }
-    }
+
 }
 
 function setUp_initialPosition(initial_position){
@@ -112,7 +118,7 @@ function isCorrectFormat_InitialPosition(string_Comand_initialPosition){
 }
 
 function isCorrectFormat_StringMovements(stringMovements){
-    var existThisMovement = move => move == 'A' || move == 'I' || move == 'D';
+    var existThisMovement = move => move == "A" || move == "I" || move == "D";
     var isFormatCorrect = true;
     for (var move_letter of stringMovements) {
         if(!existThisMovement(move_letter)){

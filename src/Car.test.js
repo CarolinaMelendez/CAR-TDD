@@ -84,8 +84,8 @@ describe("--- FUNCIONALIDAD 4: Ejecutar n veces el comando 'A' (Avanzar)  --- ",
     it("Test F4.3 - check format with many letters ",() => {
         expect( calculate_Coordinates("5,5/3,1 W/AAAO")).toEqual("Formato incorrecto"); 
     } );
-    it("Test F4.3 - check limits of dimensions ",() => {
-        expect( calculate_Coordinates("5,5/3,1 S/AAA")).toEqual("3,0 S"); 
+    it("Test F4.4 - check the limits of the dimensions ",() => {
+        expect( calculate_Coordinates("5,5/3,1 W/AAAAAAAAAAA")).toEqual("0,1 W"); 
     } );
 } )
 
@@ -125,4 +125,19 @@ describe("--- FUNCIONALIDAD 6: Implementar comando 'D' (Derecha)  --- ",() =>  {
         expect( calculate_Coordinates("5,5/3,1 N/AAAD51")).toEqual("Formato incorrecto"); 
     } );
 
+} )
+
+describe("--- General Tests  --- ",() =>  {
+    it("Gral.Test 1",() => {
+        expect( calculate_Coordinates("5,5/3,3 E/AADAADADDA")).toEqual("5,1 E"); 
+    } );
+    it("Gral.Test 2",() => {
+        expect( calculate_Coordinates("5,5/1,2 N/IAIAIAIAA")).toEqual("1,3 N"); 
+    } );
+    it("Gral.Test 3 ",() => {
+        expect( calculate_Coordinates("2,2/0,1 S/AAAAAA")).toEqual("0,0 S"); 
+    } );
+    it("Gral.Test 4 ",() => {
+        expect( calculate_Coordinates("2,2/2,2 S/AAAAAADAAAAAAADAAAAAADAAAAAADAAAA")).toEqual("2,0 S"); 
+    } );
 } )
