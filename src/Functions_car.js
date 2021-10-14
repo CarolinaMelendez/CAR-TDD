@@ -28,26 +28,27 @@ export function calculate_Coordinates(string_command){
             }else if (move == 'A'){
                 moveForward_cmd_A_(dimensions);
             }
-
             if (move == 'S'){
-                if (      orientation == "N"){ 
-                    coordinate_Y = coordinate_Y + 2;
-                }else if (orientation == "W"){ 
-                    coordinate_X = coordinate_X - 2; 
-                }else if (orientation == "E"){ 
-                    coordinate_X = coordinate_X + 2; 
-                }else{ // if (orientation == "S"){ 
-                    coordinate_Y = coordinate_Y -2 ;
-                }
+                jump();
             }
-
-
-
         }
         return final_position();
     }else{
         return answerCorrectionFormat;
     }
+}
+
+function jump(){
+        if (      orientation == "N"){ 
+            coordinate_Y = coordinate_Y + 2;
+        }else if (orientation == "W"){ 
+            coordinate_X = coordinate_X - 2; 
+        }else if (orientation == "E"){ 
+            coordinate_X = coordinate_X + 2; 
+        }else{ // if (orientation == "S"){ 
+            coordinate_Y = coordinate_Y -2 ;
+        }
+
 }
 
 function final_position(){

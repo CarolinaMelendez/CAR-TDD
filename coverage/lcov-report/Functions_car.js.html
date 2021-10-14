@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.52% </span>
+                <span class="strong">92.59% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>99/107</span>
+                <span class='fraction'>100/108</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.44% </span>
+                <span class="strong">94.73% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>17/18</span>
+                <span class='fraction'>18/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92% </span>
+                <span class="strong">92.07% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>92/100</span>
+                <span class='fraction'>93/101</span>
             </div>
         
             
@@ -229,7 +229,8 @@
 <a name='L170'></a><a href='#L170'>170</a>
 <a name='L171'></a><a href='#L171'>171</a>
 <a name='L172'></a><a href='#L172'>172</a>
-<a name='L173'></a><a href='#L173'>173</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">143x</span>
 <span class="cline-any cline-yes">135x</span>
@@ -259,8 +260,17 @@
 <span class="cline-any cline-yes">96x</span>
 <span class="cline-any cline-yes">92x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">128x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -270,14 +280,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">23x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -431,26 +433,27 @@ export function calculate_Coordinates(string_command){
             }else if (move == 'A'){
                 moveForward_cmd_A_(dimensions);
             }
-&nbsp;
             if (move == 'S'){
-                if (      orientation == "N"){ 
-                    coordinate_Y = coordinate_Y + 2;
-                }else <span class="missing-if-branch" title="if path not taken" >I</span>if (orientation == "W"){ 
-<span class="cstat-no" title="statement not covered" >                    coordinate_X = coordinate_X - 2; </span>
-                }else <span class="missing-if-branch" title="else path not taken" >E</span>if (orientation == "E"){ 
-                    coordinate_X = coordinate_X + 2; 
-                }else{ // if (orientation == "S"){ 
-<span class="cstat-no" title="statement not covered" >                    coordinate_Y = coordinate_Y -2 ;</span>
-                }
+                jump();
             }
-&nbsp;
-&nbsp;
-&nbsp;
         }
         return final_position();
     }else{
         return answerCorrectionFormat;
     }
+}
+&nbsp;
+function jump(){
+        if (      orientation == "N"){ 
+            coordinate_Y = coordinate_Y + 2;
+        }else <span class="missing-if-branch" title="if path not taken" >I</span>if (orientation == "W"){ 
+<span class="cstat-no" title="statement not covered" >            coordinate_X = coordinate_X - 2; </span>
+        }else <span class="missing-if-branch" title="else path not taken" >E</span>if (orientation == "E"){ 
+            coordinate_X = coordinate_X + 2; 
+        }else{ // if (orientation == "S"){ 
+<span class="cstat-no" title="statement not covered" >            coordinate_Y = coordinate_Y -2 ;</span>
+        }
+&nbsp;
 }
 &nbsp;
 function final_position(){
@@ -580,7 +583,7 @@ export function <span class="fstat-no" title="function not covered" >completeInf
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Oct 14 2021 09:14:40 GMT-0400 (hora de Bolivia)
+                at Thu Oct 14 2021 09:17:03 GMT-0400 (hora de Bolivia)
             </div>
         </div>
         <script src="prettify.js"></script>
