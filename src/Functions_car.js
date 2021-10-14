@@ -18,7 +18,7 @@ export function calculate_Coordinates(string_command){
         if (initial_position){ // if initial_position exits
             if (isCorrectFormat_InitialPosition(initial_position)){
 
-                if (move_command){ // if a move command exits
+                if (move_command == "A"){ // if a move command exits
                     var info_positionInitial = getPairInicialPosition_and_orientation(initial_position)
                     var coordinate_X = info_positionInitial.coordinates_pair[0] ;
                     var coordinate_Y = info_positionInitial.coordinates_pair[1] ;
@@ -49,8 +49,6 @@ export function calculate_Coordinates(string_command){
     }else{
         return errorMessage;
     }
-
-
 }
 
 function getPairInicialPosition_and_orientation(string_Comand_initialPosition){

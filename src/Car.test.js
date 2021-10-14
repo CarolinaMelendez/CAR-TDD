@@ -65,5 +65,14 @@ describe("--- FUNCIONALIDAD 3: Ejecutar una vez el comando A (Avanzar)  --- ",()
     it("Test F3.4 - give correct final position  ",() => {
         expect( calculate_Coordinates("5,5/3,3 E/A")).toEqual("4,3 E"); 
     } );
+    it("Test F3.5 - give correct final position  ",() => {
+        expect( calculate_Coordinates("5,5/3,3 E/A")).toEqual("4,3 E"); 
+    } );
+    it("Test F3.6 - check correct command 'move along'  ",() => {
+        expect( calculate_Coordinates("5,5/3,3 1/O")).toEqual("Formato incorrecto"); 
+    } );
+    it("Test F3.7 - check correct command 'move along'  ",() => {
+        expect( calculate_Coordinates("5,5/3,3 1/a")).toEqual("Formato incorrecto"); 
+    } );
   
 } )
