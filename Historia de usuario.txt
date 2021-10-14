@@ -112,3 +112,20 @@ acuerdo  a la cantidad de veces que se ejecuto el comando "D"
 . Se mostrara mensaje de error si se ingresa una letra diferente de "A","I","D"
 . Mensaje de error "formato incorrecto"
 
+------------------------------------------------------------------
+|    Funcionalidad 7: Implementar comando "S" (Saltar)           |
+------------------------------------------------------------------
+- Como: usuario/controlador/conductor
+- Quiero: que mi auto pueda saltar 
+- Para: que mi auto pueda avanzar más adelante
+
+... Criterios de confirmación:
+. El comando para movimiento debe ingresarse a lado de la posición inicial despues 
+de un "/" sin espacio en la cadena de comando. 
+. Será posible ingresar varias el comando "S"
+. Cuando se ingrese el comando y pulse la opción de ejecutar
+se deberá mostrar posición final donde está ubicada el auto.
+. La posición final estará con su respectiva orientación (N,S,W,E), de
+acuerdo  a la cantidad de veces que se ejecuto el comando "S"
+. Se mostrara mensaje de error si se ingresa una letra diferente de "A","I","D","S"
+. Mensaje de error "formato incorrecto"

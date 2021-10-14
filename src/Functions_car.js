@@ -25,9 +25,16 @@ export function calculate_Coordinates(string_command){
                 toTurnLeft_cmd_I_();
             }else if (move == 'D'){
                 toTurnRight_cmd_D_();
-            }else{
+            }else if (move == 'A'){
                 moveForward_cmd_A_(dimensions);
             }
+
+            if (move == 'S'){
+                coordinate_X = coordinate_X + 2;
+            }
+
+
+
         }
         return final_position();
     }else{
@@ -118,7 +125,7 @@ function isCorrectFormat_InitialPosition(string_Comand_initialPosition){
 }
 
 function isCorrectFormat_StringMovements(stringMovements){
-    var existThisMovement = move => move == "A" || move == "I" || move == "D";
+    var existThisMovement = move => move == "A" || move == "I" || move == "D" || move == "S";
     var isFormatCorrect = true;
     for (var move_letter of stringMovements) {
         if(!existThisMovement(move_letter)){
@@ -154,6 +161,5 @@ export function completeInformation_toShow(stringCommand_ofCar){
     let initial_position = string_command_separated[1];
     let move_command = string_command_separated[2];
     let finalPosition_ofCar = calculate_Coordinates(stringCommand_ofCar);
-    
     return [initial_position,move_command,finalPosition_ofCar ];
 } 

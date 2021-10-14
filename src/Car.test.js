@@ -141,3 +141,13 @@ describe("--- General Tests  --- ",() =>  {
         expect( calculate_Coordinates("2,2/2,2 S/AAAAAADAAAAAAADAAAAAADAAAAAADAAAA")).toEqual("2,0 S"); 
     } );
 } )
+
+
+describe("--- Funcionalidad 7: Implementar comando 'S' (Saltar)  --- ",() =>  {
+    it("F7.1 check exits command S",() => {
+        expect( calculate_Coordinates("5,5/3,3 E/S")).toEqual("5,3 E"); 
+    } );
+    it("F7.1 give correct position with S",() => {
+        expect( calculate_Coordinates("5,5/3,3 N/S")).toEqual("5,3 N"); 
+    } );
+} )
