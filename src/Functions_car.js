@@ -22,20 +22,10 @@ export function calculate_Coordinates(string_command){
         setUp_initialPosition(initial_position);
         for (var move of move_command) {
             if(move == 'I'){
-                if (orientation == "N"){ 
-                    orientation = "W"; 
-                }else if (orientation == "W"){ 
-                    orientation = "S"; 
-                }else if (orientation == "E"){ 
-                    orientation = "N"; 
-                }else if (orientation == "S"){ 
-                    orientation = "E"; 
-                }
-                
+                toTurnLeft_cmd_I_();
             }else{
                 moveForward_cmd_A_(dimensions);
             }
-
         }
         return final_position();
         
@@ -49,6 +39,17 @@ function final_position(){
 }
 
 
+function toTurnLeft_cmd_I_(){
+    if (      orientation == "N"){ 
+        orientation = "W"; 
+    }else if (orientation == "W"){ 
+        orientation = "S"; 
+    }else if (orientation == "E"){ 
+        orientation = "N"; 
+    }else{ // if (orientation == "S"){ 
+        orientation = "E"; 
+    }
+}
 
 function moveForward_cmd_A_(string_Comand_dimensions){
     let dimensions = string_Comand_dimensions.split(",").map(Number);
