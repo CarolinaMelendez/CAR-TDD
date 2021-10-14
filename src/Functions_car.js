@@ -30,7 +30,15 @@ export function calculate_Coordinates(string_command){
             }
 
             if (move == 'S'){
-                coordinate_X = coordinate_X + 2;
+                if (      orientation == "N"){ 
+                    coordinate_Y = coordinate_Y + 2;
+                }else if (orientation == "W"){ 
+                    coordinate_X = coordinate_X - 2; 
+                }else if (orientation == "E"){ 
+                    coordinate_X = coordinate_X + 2; 
+                }else{ // if (orientation == "S"){ 
+                    coordinate_Y = coordinate_Y -2 ;
+                }
             }
 
 

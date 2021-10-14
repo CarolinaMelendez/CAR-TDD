@@ -147,7 +147,10 @@ describe("--- Funcionalidad 7: Implementar comando 'S' (Saltar)  --- ",() =>  {
     it("F7.1 check exits command S",() => {
         expect( calculate_Coordinates("5,5/3,3 E/S")).toEqual("5,3 E"); 
     } );
-    it("F7.1 give correct position with S",() => {
-        expect( calculate_Coordinates("5,5/3,3 N/S")).toEqual("5,3 N"); 
+    it("F7.2 give correct position with S",() => {
+        expect( calculate_Coordinates("5,5/3,3 N/S")).toEqual("3,5 N"); 
+    } );
+    it("F7.3 many command S",() => {
+        expect( calculate_Coordinates("5,5/1,1 N/SS")).toEqual("1,5 N"); 
     } );
 } )
