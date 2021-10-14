@@ -1,9 +1,14 @@
-import { parseSync } from "@babel/core";
+//import { parseSync } from "@babel/core";
 
 const isPositive = num => num > 0;
 const isWholeNumber = num => num % 1 == 0;
 const isCorrectNumber = num => isPositive(num) && isWholeNumber(num);
 const isCorrectNumbersPair = vector => isCorrectNumber(vector[0]) &&  isCorrectNumber(vector[1]);
+
+// to keep positions of the car
+var coordinate_X = 0;
+var coordinate_Y = 0;
+var orientation = "N";
 
 export function calculate_Coordinates(string_command){
     let string_command_separated = string_command.split("/");
@@ -11,50 +16,43 @@ export function calculate_Coordinates(string_command){
     let initial_position = string_command_separated[1];
     let move_command = string_command_separated[2];
 
-    let default_position = "0,0 N";
-    let errorMessage = "Formato incorrecto";
+    let answerCorrectionFormat = checkFormat_AllCommandString(dimensions,initial_position,move_command)
 
-    if (isCorrectFormat_Dimensions(dimensions)){
-        if (initial_position){ // if initial_position exits
-            if (isCorrectFormat_InitialPosition(initial_position)){
-
-                if (move_command == "A"){ // if a move command exits
-                    var info_positionInitial = getPairInicialPosition_and_orientation(initial_position)
-                    var coordinate_X = info_positionInitial.coordinates_pair[0] ;
-                    var coordinate_Y = info_positionInitial.coordinates_pair[1] ;
-                    var orientation = info_positionInitial.orientation;
-                    if (orientation == "N"){
-                        coordinate_Y++;
-                    }
-                    if (orientation == "S"){
-                        coordinate_Y--;
-                    }
-                    if (orientation == "W"){
-                        coordinate_X--;
-                    }
-                    if (orientation == "E"){
-                        coordinate_X++;
-                    }
-                    return [coordinate_X,",",coordinate_Y," ",orientation].join('')
-
-                }else{
-                    return initial_position;
-                }
-            }else{
-                return errorMessage; 
-            }
-        }else{
-            return default_position;
-        }
+    if (answerCorrectionFormat == "Formato correcto"){
+        setUp_initialPosition(initial_position);
+        moveForward_cmd_A_(coordinate_X,coordinate_Y, orientation);
+        return final_position();
+        
     }else{
-        return errorMessage;
+        return answerCorrectionFormat;
     }
 }
 
-function getPairInicialPosition_and_orientation(string_Comand_initialPosition){
-    let orientation = string_Comand_initialPosition[string_Comand_initialPosition.length -1];
-    let coordinates_pair = string_Comand_initialPosition.replace(orientation,"").split(",").map(Number);
-    return {coordinates_pair : coordinates_pair , orientation : orientation };
+
+function final_position(){
+    return [coordinate_X,",",coordinate_Y," ",orientation].join('');
+}
+
+function moveForward_cmd_A_(){
+    if (orientation == "N"){
+        coordinate_Y++;
+    }
+    if (orientation == "S"){
+        coordinate_Y--;
+    }
+    if (orientation == "W"){
+        coordinate_X--;
+    }
+    if (orientation == "E"){
+        coordinate_X++;
+    }
+}
+
+function setUp_initialPosition(initial_position){
+    orientation = initial_position[initial_position.length -1];
+    let coordinates_pair = initial_position.replace(orientation,"").split(",").map(Number);
+    coordinate_X = coordinates_pair[0] ;
+    coordinate_Y = coordinates_pair[1] ;
 }
 
 function isCorrectFormat_Dimensions(string_Comand_dimensions){
@@ -67,13 +65,32 @@ function isCorrectFormat_Dimensions(string_Comand_dimensions){
 }
 
 function isCorrectFormat_InitialPosition(string_Comand_initialPosition){
-    let orientation = string_Comand_initialPosition[string_Comand_initialPosition.length -1];
-    let coordinates_pair = string_Comand_initialPosition.replace(orientation,"").split(",").map(Number);
+    let orientation_string = string_Comand_initialPosition[string_Comand_initialPosition.length -1];
+    let coordinates_pair = string_Comand_initialPosition.replace(orientation_string,"").split(",").map(Number);
     const isCorrectOrientation = orientation => orientation == "N" || orientation == "E" || orientation == "S" || orientation == "W";
-    
-    if (isCorrectNumbersPair(coordinates_pair) && isCorrectOrientation(orientation)){
-        return true
-    }else{
-        return false
+    if (isCorrectNumbersPair(coordinates_pair) && isCorrectOrientation(orientation_string)){
+        return true;
     }
+    return false;
+}
+
+function isCorrectFormat_StringMovements(stringMovements){
+    var existThisMovement = move => move == 'A';
+    return existThisMovement(stringMovements);
+}
+
+function checkFormat_AllCommandString(dimensions,initial_position,stringMovements){ 
+    if (isCorrectFormat_Dimensions(dimensions)){
+        if (initial_position){ // if initial_position exits
+            if (isCorrectFormat_InitialPosition(initial_position)){
+                if(isCorrectFormat_StringMovements(stringMovements)){
+                    return "Formato correcto";
+                }
+                return initial_position;
+            }
+            return "Formato incorrecto";
+        }
+        return final_position();
+    }
+    return "Formato incorrecto";
 }

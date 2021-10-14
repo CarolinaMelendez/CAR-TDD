@@ -47,9 +47,6 @@ describe("--- FUNCIONALIDAD 2: Ingresar posición inicial  --- ",() =>  {
     it("Test F2.5 - Check format of posición inicial ",() => {
         expect( calculate_Coordinates("5,5/2,-1 F")).toEqual("Formato incorrecto"); 
     } );
-    it("Test F2.6 - Check format of posición inicial ",() => {
-        expect( calculate_Coordinates("5,5/2,1N")).toEqual("2,1N"); 
-    } );
 } )
 
 describe("--- FUNCIONALIDAD 3: Ejecutar una vez el comando A (Avanzar)  --- ",() =>  {
