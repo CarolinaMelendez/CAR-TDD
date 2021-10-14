@@ -20,7 +20,9 @@ export function calculate_Coordinates(string_command){
 
     if (answerCorrectionFormat == "Formato correcto"){
         setUp_initialPosition(initial_position);
-        moveForward_cmd_A_(coordinate_X,coordinate_Y, orientation);
+        for (var move of move_command) {
+            moveForward_cmd_A_(coordinate_X,coordinate_Y, orientation);
+        }
         return final_position();
         
     }else{
@@ -73,18 +75,31 @@ function isCorrectFormat_InitialPosition(string_Comand_initialPosition){
     }
     return false;
 }
-
+/*
 function isCorrectFormat_StringMovements(stringMovements){
     var existThisMovement = move => move == 'A';
     return existThisMovement(stringMovements);
+}*/
+function isCorrectFormat_StringMovements(stringMovements){
+    var existThisMovement = move => move == 'A';
+    var isFormatCorrect = true;
+    for (var move_letter of stringMovements) {
+        if(!existThisMovement(move_letter)){
+            isFormatCorrect = false;
+        }
+    }
+    return isFormatCorrect;
 }
 
 function checkFormat_AllCommandString(dimensions,initial_position,stringMovements){ 
     if (isCorrectFormat_Dimensions(dimensions)){
         if (initial_position){ // if initial_position exits
             if (isCorrectFormat_InitialPosition(initial_position)){
-                if(isCorrectFormat_StringMovements(stringMovements)){
-                    return "Formato correcto";
+                if (stringMovements){    // if stringMovements exits
+                    if(isCorrectFormat_StringMovements(stringMovements)){
+                        return "Formato correcto";
+                    }
+                    return "Formato incorrecto";
                 }
                 return initial_position;
             }

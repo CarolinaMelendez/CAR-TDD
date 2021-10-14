@@ -73,3 +73,17 @@ describe("--- FUNCIONALIDAD 3: Ejecutar una vez el comando A (Avanzar)  --- ",()
     } );
   
 } )
+
+describe("--- FUNCIONALIDAD 4: Ejecutar n veces el comando 'A' (Avanzar)  --- ",() =>  {
+    it("Test F4.1 - give correct position with many 'A' ",() => {
+        expect( calculate_Coordinates("5,5/3,1 N/AAA")).toEqual("3,4 N"); 
+    } );
+    it("Test F4.2 - give correct position with many 'A' ",() => {
+        expect( calculate_Coordinates("5,5/3,1 W/AAA")).toEqual("0,1 W"); 
+    } );
+    it("Test F4.3 - check format with many letters ",() => {
+        expect( calculate_Coordinates("5,5/3,1 W/AAAO")).toEqual("Formato incorrecto"); 
+    } );
+ 
+  
+} )

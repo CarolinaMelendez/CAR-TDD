@@ -7,7 +7,7 @@ F1: Ingresar dimensiones de la matriz
 F2: Ingresar posición inicial 
     |-> OK
 F3: Ejecutar una vez el comando "A" (Avanzar)
-    |-> 
+    |-> OK
 F4: Ejecutar n veces el comando "A" (Avanzar)
     |-> 
 F5: Implementar comando "I" (Izquierda)
