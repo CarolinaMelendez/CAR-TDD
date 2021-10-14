@@ -1,6 +1,28 @@
 <html>
-  <body>
-    <h1>Hola</h1>
-    <script src="./src/index.js"></script>
-  </body>
+    <head>
+      <h1 id="title" style = "font-family:'Courier New', Courier, monospace">Manejando autito de Marte </h1>
+    </head>
+    <body>
+      <div>
+        <form id="car-form">
+          <div>
+            <label for="string-command-input">Ingrese comando:</label>
+            <input type="text" id="string-command-input">
+          </div><br>
+  
+          <div>
+            <input type="submit" value="run" />
+          </div><br>
+  
+          <div>
+            <p id="ini-position-output"></p>
+            <p id="commands-output"></p>
+            <p id="final-position-output"></p>
+          </div>
+          
+        </form>
+      </div><br>
+  
+      <script src="./src/index.js"></script>
+    </body>
 </html>

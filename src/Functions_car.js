@@ -146,3 +146,14 @@ function checkFormat_AllCommandString(dimensions,initial_position,stringMovement
     }
     return "Formato incorrecto";
 }
+
+
+export function completeInformation_toShow(stringCommand_ofCar){
+    let string_command_separated = stringCommand_ofCar.split("/");
+    let dimensions = string_command_separated[0];
+    let initial_position = string_command_separated[1];
+    let move_command = string_command_separated[2];
+    let finalPosition_ofCar = calculate_Coordinates(stringCommand_ofCar);
+    
+    return [initial_position,move_command,finalPosition_ofCar ];
+} 
